@@ -1,0 +1,65 @@
+/* Python Code for Rock, Paper, Scissors*/
+
+
+import random
+
+def get_computer_choice():
+    return random.choice(['rock', 'paper', 'scissors'])
+
+def determine_winner(user_choice, computer_choice):
+    rules = {
+        ('rock', 'scissors'): 'win',
+        ('scissors', 'paper'): 'win',
+        ('paper', 'rock'): 'win'
+    }
+    if user_choice == computer_choice:
+        return 'tie'
+    elif (user_choice, computer_choice) in rules:
+        return 'win'
+    else:
+        return 'lose'
+
+def play_round():
+    user_choice = input("Choose Rock, Paper, or Scissors: ").lower()
+    if user_choice not in ['rock', 'paper', 'scissors']:
+        print("Invalid choice. Please choose Rock, Paper, or Scissors.")
+        return None, None
+    
+    computer_choice = get_computer_choice()
+    result = determine_winner(user_choice, computer_choice)
+    
+    print(f"\nYou chose: {user_choice.capitalize()}")
+    print(f"The computer chose: {computer_choice.capitalize()}")
+    
+    if result == 'tie':
+        print("It's a tie!")
+    elif result == 'win':
+        print("You win!")
+    else:
+        print("You lose!")
+    
+    return result
+
+def main():
+    user_score = 0
+    computer_score = 0
+    
+    while True:
+        result = play_round()
+        if result is None:
+            continue
+        
+        if result == 'win':
+            user_score += 1
+        elif result == 'lose':
+            computer_score += 1
+        
+        print(f"\nScore: You {user_score} - {computer_score} Computer")
+        
+        if input("\nPlay again? (yes/no): ").lower() != 'yes':
+            print("Thanks for playing!")
+            break
+
+# Start the game
+if __name__ == "__main__":
+    main()
