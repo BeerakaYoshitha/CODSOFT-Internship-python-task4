@@ -39,10 +39,6 @@ The game will display your choice, the computer’s choice, and the result (win,
 Play Again:
 After each round, you will be asked if you want to play again. Type yes to continue or no to exit.
 
-- Example:
-
- ![EXAMPLE](https://github.com/user-attachments/assets/4c299091-29b0-4b9a-9a3c-cea42d795aff)
-
 
 - Code Explanation:
 
@@ -53,3 +49,8 @@ determine_winner(user_choice, computer_choice): Determines the result of the gam
 play_round(): Manages a single round of the game including user input and displaying results.
 
 main(): Runs the game loop, keeps track of scores, and manages the replay prompt.
+
+# OUTPUT OF THE CODE/ EXAMPLE OF THE CODE:
+
+![RpsGAME)](https://github.com/user-attachments/assets/87a3aa8b-d80a-4513-b130-e046791a1015)
+
